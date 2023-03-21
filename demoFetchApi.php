@@ -1,23 +1,17 @@
-<?php 
-// test fetch api using fetch() 
-// also use curl to avoid SSL err
-$url = 'http://localhost:8080/product'; // url to api 
-$curl = curl_init($url);
+<?php
+$curl = curl_init();
+curl_setopt_array($curl, array(
+    CURLOPT_RETURNTRANSFER => 0,
+    CURLOPT_URL => 'http://localhost:8080/user',
+    CURLOPT_USERAGENT => 'test cURL Request',
+    CURLOPT_SSL_VERIFYPEER => false
+));
 
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($curl);
+$resp = curl_exec($curl);
 
-if ($response !== false) {
-    $data = json_decode($response, true);
-    // Do something with the data
-   echo json_encode($data);
+//Kết quả trả tìm kiếm trả về dạng JSON
+$weather = json_decode($resp);
 
-} else {
-    // Handle the error
-    
-   
-}
+var_dump($weather); // dump kết quả
 
 curl_close($curl);
-
-?>
