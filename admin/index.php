@@ -1,0 +1,1 @@
+<?php require("templates/admin-home.php");
