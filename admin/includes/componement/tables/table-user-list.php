@@ -1,8 +1,9 @@
-<table class="table">
-    <thead>
+<table class="table caption-top">
+    <caption>List of users</caption>
+    <thead class="table-dark">
         <tr>
             <th scope="col">User ID</th>
-            <th scope="col">User Name</th>
+            <th scope="col">Username</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
