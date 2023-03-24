@@ -8,6 +8,7 @@
             <th scope="col">Address</th>
             <th scope="col">Phone</th>
             <th scope="col">Access Level</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -24,11 +25,14 @@
             echo '<td>'.$rs->address.'</td>';
             echo '<td>'.$rs->phone.'</td>';
             if($rs->accessLevel==true){
-                echo '<td>'.'1'.'</td>';
+                echo '<td>'.'Employee'.'</td>';
             }
-            else echo '<td>'.'0'.'</td>';
-            
+            else echo '<td>'.'Customer'.'</td>';
+            echo  '<td>';
+            require("./includes/componement/buttons/user-table-button-group.php");
+            echo '</td>';
             echo '</tr>';
+           
           }
         ?>
     </tbody>
