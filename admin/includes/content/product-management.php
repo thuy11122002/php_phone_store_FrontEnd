@@ -1,7 +1,7 @@
 <div class="col" >
     <h3>Product Management</h3>
     <div class="container">
-        <form method="post">
+        <form action="./" method="post">
             <div class="row">
                 <div class="col">
                     <div class="input-group">
@@ -11,13 +11,14 @@
                     </div>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary" name="button2" type="submit-button" id="button2">Add product</button>
+                <button class="btn btn-primary" name="button2" type="button" id="button2" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Add Product</button>
                 </div>
             </div>
         </form>
         <?php
          require("./includes/scripts/handlers/product-management-form-handler.php");
          require("./includes/componement/tables/table-product-list.php");
+         require("./includes/componement/forms/form-add-product.php");
         ?>
     </div>
 </div>
