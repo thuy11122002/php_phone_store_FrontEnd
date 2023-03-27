@@ -13,28 +13,33 @@
         </tr>
     </thead>
     <tbody>
-        <?php 
-          require("./includes/scripts/api/getUser.php");
-          $resp = getUserList();
-         
-          foreach($resp as $rs){
+        <?php
+        require_once("./includes/scripts/api/APIs.php");
+        $url= 'http://localhost:8080/user';
+        $resp = getList($url);
+
+        foreach ($resp as $rs) {
             echo '<tr>';
-            echo '<th scope="row">'.$rs->userID. '</th>';
-            echo '<td>'.$rs->userName.'</td>';
-            echo '<td>'.$rs->name.'</td>';
-            echo '<td>'.$rs->email.'</td>';
-            echo '<td>'.$rs->address.'</td>';
-            echo '<td>'.$rs->phone.'</td>';
-            if($rs->accessLevel==true){
-                echo '<td>'.'Employee'.'</td>';
-            }
-            else echo '<td>'.'Customer'.'</td>';
-            echo  '<td>';
+            echo '<th scope="row">' . $rs->userID . '</th>';
+            echo '<td>' . $rs->userName . '</td>';
+            echo '<td>' . $rs->name . '</td>';
+            echo '<td>' . $rs->email . '</td>';
+            echo '<td>' . $rs->address . '</td>';
+            echo '<td>' . $rs->phone . '</td>';
+            if ($rs->accessLevel == true) {
+                echo '<td>' . 'Employee' . '</td>';
+            } else
+                echo '<td>' . 'Customer' . '</td>';
+            echo '<td>';
+
+            echo '<form method="post">';
+            echo '<input type="hidden" name="rowID" value="' . strval($rs->userID) . '">';
             require("./includes/componement/buttons/table-button-group.php");
+            echo '</form>';
             echo '</td>';
             echo '</tr>';
-           
-          }
+
+        }
         ?>
     </tbody>
 

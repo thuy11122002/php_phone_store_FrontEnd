@@ -1,15 +1,34 @@
 <?php
-
-        function testfun()
+        require_once("./includes/scripts/api/APIs.php");
+        function search()
         {
             echo $_POST['search-bar'];
         }
+        function viewItem(){
+            
+            echo  $_POST['rowID'];
+        }
+        function deleteItem(){
+            $url= 'http://localhost:8080/user/'.''.$_POST['rowID'];
+            deleteAPI($url);
+        }
+        function editItem(){
+            
+        }
 
         if (array_key_exists('button1', $_POST)) {
-            testfun();
+            search();
         }
         if (array_key_exists('button2', $_POST)) {
             echo "add user btn clicked";
         }
-
+        if (array_key_exists('view', $_POST)) {
+            viewItem();
+        }
+        if (array_key_exists('edit', $_POST)) {
+            editItem();
+        }
+        if (array_key_exists('delete', $_POST)) {
+           deleteItem();
+        }
         ?>

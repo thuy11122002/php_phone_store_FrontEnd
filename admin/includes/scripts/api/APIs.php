@@ -1,10 +1,10 @@
 <?php
 // get product API
-function getProductList(){
+function getList($url){
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_RETURNTRANSFER => true, // curl option 
-        CURLOPT_URL => 'http://localhost:8080/product',
+        CURLOPT_URL => $url,
         CURLOPT_USERAGENT => 'get cURL Request',
         CURLOPT_SSL_VERIFYPEER => false
     ));
@@ -22,27 +22,7 @@ function getProductList(){
     
 }
 // post product API
-function postProduct($data){
-    $curl = curl_init();
-
-curl_setopt_array($curl, array(
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_URL => 'http://localhost:8080/product',
-    CURLOPT_USERAGENT => 'API POST',
-    CURLOPT_POST => true,
-    
-    CURLOPT_POSTFIELDS => json_encode($data),
-    CURLOPT_SSL_VERIFYPEER => false, //Bỏ kiểm SSL
-    CURLOPT_HTTPHEADER=> array('Content-Type: application/json')
-));
-$resp = curl_exec($curl);
-
-
-
-curl_close($curl);
-}
-// update product api
-function putProduct($data,$url){
+function postAPI($data,$url){
     $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -61,9 +41,29 @@ $resp = curl_exec($curl);
 
 curl_close($curl);
 }
+// update product api
+function putAPI($data,$url){
+    $curl = curl_init();
+
+curl_setopt_array($curl, array(
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_URL => $url,
+    CURLOPT_USERAGENT => 'API PUT',
+    CURLOPT_CUSTOMREQUEST=> 'PUT',
+    
+    CURLOPT_POSTFIELDS => json_encode($data),
+    CURLOPT_SSL_VERIFYPEER => false, //Bỏ kiểm SSL
+    CURLOPT_HTTPHEADER=> array('Content-Type: application/json')
+));
+$resp = curl_exec($curl);
+
+
+
+curl_close($curl);
+}
 
 // delete Product API
-function deleteProduct($url){
+function deleteAPI($url){
     $curl = curl_init();
 
 curl_setopt_array($curl, array(
