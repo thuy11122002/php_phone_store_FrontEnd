@@ -14,11 +14,12 @@
     </thead>
     <tbody>
         <?php 
-          require_once("./includes/scripts/api/getProduct.php");
-          require_once("./includes/scripts/api/getBrand.php");
+          require_once("./includes/scripts/api/APIs.php");
+          $url1='http://localhost:8080/product';
+          $url2='http://localhost:8080/brand';
 
-          $resp = getProductList();
-          $brands = getBrandList();
+          $resp = getList($url1);
+          $brands = getList($url2);
           
           foreach($resp as $rs){
             echo '<tr>';
@@ -37,7 +38,11 @@
             
             
             echo  '<td>';
+            //require("./includes/componement/buttons/table-button-group.php");
+            echo '<form method="post">';
+            echo '<input type="hidden" name="rowID" value="' . strval($rs->productID) . '">';
             require("./includes/componement/buttons/table-button-group.php");
+            echo '</form>';
             echo '</td>';
             echo '</tr>';
           }
