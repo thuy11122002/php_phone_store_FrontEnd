@@ -37,7 +37,11 @@
             
             
             echo  '<td>';
+            //require("./includes/componement/buttons/table-button-group.php");
+            echo '<form method="post">';
+            echo '<input type="hidden" name="rowID" value="' . strval($rs->productID) . '">';
             require("./includes/componement/buttons/table-button-group.php");
+            echo '</form>';
             echo '</td>';
             echo '</tr>';
           }
