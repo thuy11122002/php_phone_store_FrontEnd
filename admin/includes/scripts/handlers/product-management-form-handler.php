@@ -1,6 +1,6 @@
 <?php
 //  global variable
-require("./includes/scripts/api/APIs.php");
+require_once("./includes/scripts/api/APIs.php");
 // fuctions
 function testfun()
 {
