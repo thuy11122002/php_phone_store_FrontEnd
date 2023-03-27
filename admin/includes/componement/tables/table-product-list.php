@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <?php 
-          require_once("./includes/scripts/api/getProduct.php");
+          require_once("./includes/scripts/api/productAPIs.php");
           require_once("./includes/scripts/api/getBrand.php");
 
           $resp = getProductList();
