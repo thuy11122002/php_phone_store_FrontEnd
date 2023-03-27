@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <?php 
-          require("./includes/scripts/api/getProduct.php");
+          require_once("./includes/scripts/api/getProduct.php");
           require_once("./includes/scripts/api/getBrand.php");
 
           $resp = getProductList();
@@ -30,9 +30,11 @@
                     echo '<td>'.$br->brandName.'</td>';
                 }
             }
-            echo '<td>'.$rs->description.'</td>';
             echo '<td>'.$rs->stock.'</td>';
             echo '<td>'.$rs->imgURL.'</td>';
+            echo '<td>'.$rs->description.'</td>';
+            
+            
             
             echo  '<td>';
             require("./includes/componement/buttons/table-button-group.php");

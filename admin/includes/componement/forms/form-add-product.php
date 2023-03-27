@@ -10,9 +10,9 @@
             <div class="modal-body">
                 <form method="post">
                     <div class="mb-3">
-                        <label for="product-name" class="form-label">Product name</label>
-                        <input type="text" required class="form-control" name="product-name" id="product-name"
-                            aria-describedby="product-name">
+                        <label for="productName" class="form-label">Product name</label>
+                        <input type="text" required class="form-control" name="productName" id="productName"
+                            aria-describedby="productName">
 
                     </div>
                     <div class="mb-3">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="img-url" class="form-label">Img URL</label>
-                        <input type="text" required class="form-control"name="img-url" id="img-url" aria-describedby="url">
+                        <input type="text" required class="form-control"name="imgURL" id="imgURL" aria-describedby="imgURL">
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Product's description</label>
