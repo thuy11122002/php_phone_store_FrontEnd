@@ -9,7 +9,7 @@
             echo  $_POST['rowID'];
         }
         function deleteItem(){
-            $url= 'http://localhost:8080/user/'.''.$_POST['rowID'];
+            $url= 'http://localhost:8080/bill/'.''.$_POST['rowID'];
             deleteAPI($url);
         }
         function editItem(){
@@ -19,17 +19,8 @@
         if (array_key_exists('button1', $_POST)) {
             search();
         }
-        if (array_key_exists('button3', $_POST)) {
-            // add user 
-           // var_dump($_POST);
-            
-            $url= 'http://localhost:8080/user';
-            $data = $_POST;
-            unset($data['button3']);
-            $rs = getList($url);
-            $data["userID"] = count($rs) + 1;
-            $data["accessLevel"] = false;
-            postAPI($data,$url); 
+        if (array_key_exists('button2', $_POST)) {
+            echo "add user btn clicked";
         }
         if (array_key_exists('view', $_POST)) {
             viewItem();

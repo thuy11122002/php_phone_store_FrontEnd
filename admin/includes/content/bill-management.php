@@ -18,7 +18,7 @@
             </div>
         </form>
         <?php
-        //require_once("./includes/scripts/handlers/product-management-form-handler.php");
+        require_once("./includes/scripts/handlers/bill-management-form-handler.php");
         require_once("./includes/componement/tables/table-bill-list.php");
         //require_once("./includes/componement/forms/form-add-product.php");
         ?>

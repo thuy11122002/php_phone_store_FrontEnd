@@ -18,7 +18,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" required class="form-control" name="fullName" id="fullName">
+                        <input type="text" required class="form-control" name="name" id="name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Address" class="form-label">Address</label>
-                        <input class="form-control" name="description" id="address"></input>
+                        <input class="form-control" name="address" id="address"></input>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
