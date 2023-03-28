@@ -21,7 +21,7 @@
         } 
         if($actual_path == "/order"){
             $page_title = "order";
-            require("./templates/admin-order-management.php");
+            require("./templates/admin-bill-management.php");
             
         } 
         if($actual_path == "/brand"){

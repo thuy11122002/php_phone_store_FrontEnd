@@ -21,6 +21,27 @@ function getList($url){
     return $results;
     
 }
+function getSingleItem($url){
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_RETURNTRANSFER => true, // curl option 
+        CURLOPT_URL => $url,
+        CURLOPT_USERAGENT => 'get cURL Request',
+        CURLOPT_SSL_VERIFYPEER => false
+    ));
+    
+    $resp = curl_exec($curl);
+    //$result = json_decode(curl_exec($curl));
+    //Kết quả trả tìm kiếm trả về dạng JSON
+    $results = json_decode($resp);
+    
+    
+    
+    curl_close($curl);
+    
+    return $results;
+    
+}
 // post product API
 function postAPI($data,$url){
     $curl = curl_init();

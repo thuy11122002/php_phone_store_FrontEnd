@@ -27,7 +27,7 @@
             echo '<td>'.$rs->productName.'</td>';
             echo '<td>'.$rs->price.'</td>';
             foreach($brands as $br){
-                if($rs->brandID=$br->brandID){
+                if($rs->brandID==$br->brandID){
                     echo '<td>'.$br->brandName.'</td>';
                 }
             }
