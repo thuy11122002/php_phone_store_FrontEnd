@@ -19,8 +19,14 @@
         if (array_key_exists('button1', $_POST)) {
             search();
         }
-        if (array_key_exists('button2', $_POST)) {
-            echo "add user btn clicked";
+        if (array_key_exists('button3', $_POST)) {
+            $url= 'http://localhost:8080/brand';
+            $data = $_POST;
+            unset($data['button3']);
+            $rs = getList($url);
+            $data["brandID"] = count($rs) + 1;
+            
+            postAPI($data,$url); 
         }
         if (array_key_exists('view', $_POST)) {
             viewItem();

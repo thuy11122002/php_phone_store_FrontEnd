@@ -12,15 +12,15 @@
                     </div>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary" name="button2" type="button" id="button2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop2">Add brand</button>
+                    <button class="btn btn-primary" name="button3" type="button" id="button3" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Add brand</button>
                 </div>
             </div>
         </form>
         <?php
         require_once("./includes/scripts/handlers/brand-management-form-handler.php");
         require_once("./includes/componement/tables/table-brand-list.php");
-        //require_once("./includes/componement/forms/form-add-product.php");
+        require_once("./includes/componement/forms/form-add-brand.php");
         ?>
     </div>
 </div>
