@@ -1,5 +1,5 @@
 <div class="col">
-    <h3>Brand Management</h3>
+    <h3>Bill Management</h3>
     <div class="container">
         <form method="post">
             <div class="row">
@@ -13,13 +13,13 @@
                 </div>
                 <div class="col">
                     <button class="btn btn-primary" name="button2" type="button" id="button2" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop2">Add brand</button>
+                        data-bs-target="#staticBackdrop2">Add bill</button>
                 </div>
             </div>
         </form>
         <?php
-        require_once("./includes/scripts/handlers/brand-management-form-handler.php");
-        require_once("./includes/componement/tables/table-brand-list.php");
+        //require_once("./includes/scripts/handlers/product-management-form-handler.php");
+        require_once("./includes/componement/tables/table-bill-list.php");
         //require_once("./includes/componement/forms/form-add-product.php");
         ?>
     </div>
