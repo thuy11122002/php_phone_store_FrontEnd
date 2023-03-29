@@ -19,7 +19,10 @@ if (array_key_exists('button3', $_POST)) {
     $data = $_POST;
     unset($data['button3']);
     $rs = getList($url);
-    $data["productID"] = count($rs) + 1;
+    if($rs==null){
+        $data["productID"]=1;
+    }
+    else $data["productID"] = end($rs)->productID + 1;
 
 
     //  var_dump(json_encode($data));

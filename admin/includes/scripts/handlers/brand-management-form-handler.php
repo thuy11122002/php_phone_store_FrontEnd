@@ -24,6 +24,9 @@
             $data = $_POST;
             unset($data['button3']);
             $rs = getList($url);
+            if($rs==null){
+                $data["brandID"] =1;
+            }
             $data["brandID"] = count($rs) + 1;
             
             postAPI($data,$url); 
