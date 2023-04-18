@@ -27,7 +27,10 @@
             $data = $_POST;
             unset($data['button3']);
             $rs = getList($url);
-            $data["userID"] = count($rs) + 1;
+            if($rs==null){
+                $data["userID"] =1;
+            }
+            else $data["userID"] = count($rs) + 1;
             $data["accessLevel"] = false;
             postAPI($data,$url); 
         }
